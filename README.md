@@ -1,2 +1,5 @@
 # pre-commit-hooks
-Hooks to use with pre-commit.com
+
+A hook to crunch png, to use with pre-commit.com
+Uses oxipng under the hood.
+Not predictable yet.

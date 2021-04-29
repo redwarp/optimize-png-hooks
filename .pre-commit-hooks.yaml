@@ -4,4 +4,4 @@
   entry: optimize_png
   language: rust
   types: [png]
-  exclude: "^.pre-commit-config.yaml$"
+  args: [--zopfli]
