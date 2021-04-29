@@ -4,4 +4,3 @@
   entry: optimize_png
   language: rust
   types: [png]
-  args: [--zopfli]
