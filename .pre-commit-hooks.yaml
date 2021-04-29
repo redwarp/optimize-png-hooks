@@ -1,4 +1,4 @@
-- id: optimize_png
+- id: optimize-png
   name: Optimize PNG
   description: "Optimizes PNG files"
   entry: optimize_png
