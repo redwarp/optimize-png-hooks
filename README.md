@@ -2,7 +2,7 @@
 
 This repo provide one hook, to optimize png files, to reduce their size without losing quality.
 
-⚠️ It requires the `rust` toolchain installed, and uses `[oxipng](https://github.com/shssoichiro/oxipng)` under the hood.
+⚠️ It requires the `rust` toolchain installed, and uses [`oxipng`](https://github.com/shssoichiro/oxipng) under the hood.
 It's result are predictable, so running the hook twice on the same PNG file will produce the same result.
 
 To install `rust`, head to https://www.rust-lang.org/tools/install and do it.
