@@ -1,9 +1,9 @@
 # About
 
-This repo provide one hook, to optimize png files, to reduce their size without losing quality.
+This repo provide one hook to use with [pre-commit](https://pre-commit.com/) that optimize png files: it will reduce their size without losing quality.
 
 ⚠️ It requires the `rust` toolchain installed, and uses [`oxipng`](https://github.com/shssoichiro/oxipng) under the hood.
-It's result are predictable, so running the hook twice on the same PNG file will produce the same result.
+It is predictable, so running the hook twice on the same PNG file will produce the same result.
 
 To install `rust`, head to https://www.rust-lang.org/tools/install and do it.
 
@@ -18,7 +18,7 @@ Then: add a similar snippet to your `.pre-commit-config.yaml` file
     - id: optimize-png
 ```
 
-Optionally, you can activate zopfli for extra crunch. I wouldn't do it if I were you, as the cost is high (zopfli is really efficient, but is order of magnitudes more expensive in terms of computations, and will take for ever to compute each gifs)
+Optionally, you can activate zopfli for extra crunch. I wouldn't do it if I were you, as the cost is IMO too high (zopfli is really efficient, but is order of magnitudes more expensive in terms of computation, and will take for ever to apply the hook on each png file)
 
 So, you should probably not do it, but just in case you want it:
 
