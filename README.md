@@ -18,7 +18,7 @@ Then: add a similar snippet to your `.pre-commit-config.yaml` file
     - id: optimize-png
 ```
 
-Optionally, you can activate zopfli for extra crunch. I wouldn't do it if I were you, as the cost is IMO too high (zopfli is really efficient, but is order of magnitudes more expensive in terms of computation, and will take for ever to apply the hook on each png file)
+Optionally, you can activate zopfli for extra crunch. I wouldn't do it if I were you, as the cost is IMO too high (zopfli is really efficient, but is order of magnitudes more expensive in terms of computation and will take forever to run on each png file)
 
 So, you should probably not do it, but just in case you want it:
 
