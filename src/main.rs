@@ -18,14 +18,14 @@ fn main() {
     let matches = App::new("optimize png")
         .version(env!("CARGO_PKG_VERSION"))
         .about("Optimize png using oxipng")
-        .arg(Arg::with_name("zopfli").short("z").long("zopfli").help(
+        .arg(Arg::new("zopfli").short('z').long("zopfli").help(
             "If present, will use zopfli for compression. \
             More efficient compression, but order of magnitude slower. Not recommanded.",
         ))
         .arg(
-            Arg::with_name("path")
+            Arg::new("path")
                 .help("Path(s) to files to optimize")
-                .multiple(true)
+                .multiple_occurrences(true)
                 .required(true),
         )
         .get_matches();
