@@ -20,7 +20,7 @@ fn main() {
         .about("Optimize png using oxipng")
         .arg(Arg::new("zopfli").short('z').long("zopfli").help(
             "If present, will use zopfli for compression. \
-            More efficient compression, but order of magnitude slower. Not recommanded.",
+            More efficient compression, but order of magnitude slower. Not recommended.",
         ))
         .arg(
             Arg::new("path")
