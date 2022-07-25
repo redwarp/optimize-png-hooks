@@ -1,5 +1,6 @@
 use clap::{App, Arg};
 use oxipng::{optimize, InFile, Options, OutFile, PngResult};
+use rayon::iter::{ParallelBridge, ParallelIterator};
 use std::path::PathBuf;
 
 fn optimize_png(path: &str, uses_zopfli: bool) -> PngResult<()> {
@@ -31,9 +32,11 @@ fn main() {
         .get_matches();
 
     let uses_zopfli = matches.is_present("zopfli");
+
     let results: Result<Vec<_>, _> = matches
         .values_of("path")
-        .unwrap()
+        .expect("Path was not set")
+        .par_bridge()
         .map(|path| optimize_png(path, uses_zopfli))
         .collect();
 
