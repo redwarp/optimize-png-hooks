@@ -1,6 +1,7 @@
 use clap::{App, Arg};
 use oxipng::{optimize, InFile, Options, OutFile, PngResult};
 use std::path::PathBuf;
+const DEFAULT_ZOPFLI_ITERATIONS: NonZeroU8 = unsafe { NonZeroU8::new_unchecked(15) };
 
 fn optimize_png(path: &str, uses_zopfli: bool) -> PngResult<()> {
     let path_buf = PathBuf::from(path);
@@ -8,7 +9,9 @@ fn optimize_png(path: &str, uses_zopfli: bool) -> PngResult<()> {
     let mut option = Options::from_preset(5);
     option.strip = oxipng::Headers::Safe;
     if uses_zopfli {
-        option.deflate = oxipng::Deflaters::Zopfli;
+        option.deflate = oxipng::Deflaters::Zopfli {
+            iterations: DEFAULT_ZOPFLI_ITERATIONS,
+        };
     }
 
     optimize(&InFile::Path(path_buf), &OutFile::Path(None), &option)
