@@ -1,7 +1,10 @@
 use clap::{App, Arg};
 use oxipng::{optimize, InFile, Options, OutFile, PngResult};
-use std::path::PathBuf;
+use std::{num::NonZeroU8, path::PathBuf};
+
 const DEFAULT_ZOPFLI_ITERATIONS: NonZeroU8 = unsafe { NonZeroU8::new_unchecked(15) };
+const DEPRECATION_WARNING: &str = r"Deprecated: The official oxipng repo contains a .pre-commit-hooks.yaml file making this one redundant.
+See https://github.com/shssoichiro/oxipng";
 
 fn optimize_png(path: &str, uses_zopfli: bool) -> PngResult<()> {
     let path_buf = PathBuf::from(path);
@@ -18,6 +21,8 @@ fn optimize_png(path: &str, uses_zopfli: bool) -> PngResult<()> {
 }
 
 fn main() {
+    println!("{DEPRECATION_WARNING}");
+
     let matches = App::new("optimize png")
         .version(env!("CARGO_PKG_VERSION"))
         .about("Optimize png using oxipng")

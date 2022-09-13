@@ -1,11 +1,16 @@
+⚠️ **Deprecated:**
+The official oxipng repo contains a _.pre-commit-hooks.yaml_ file making this one redundant.
+
+See https://github.com/shssoichiro/oxipng
+
 # About
 
 This repo provide one hook to use with [pre-commit](https://pre-commit.com/) that optimize png files: it will reduce their size without losing quality.
 
-⚠️ It requires the `rust` toolchain installed, and uses [`oxipng`](https://github.com/shssoichiro/oxipng) under the hood.
+⚠️ It requires the `rust` toolchain installed, and uses [ `oxipng` ](https://github.com/shssoichiro/oxipng) under the hood.
 It is predictable, so running the hook twice on the same PNG file will produce the same result.
 
-To install `rust`, head to https://www.rust-lang.org/tools/install and do it.
+To install `rust` , head to https://www.rust-lang.org/tools/install and do it.
 
 ## Example usage
 

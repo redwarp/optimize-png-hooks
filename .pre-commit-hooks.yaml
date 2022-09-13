@@ -4,3 +4,4 @@
   entry: optimize_png
   language: rust
   types: [png]
+  verbose: true
